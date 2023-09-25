@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CWS's Portfolio</title>
+  <link rel="stylesheet" href="./fakeLoader.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="./fakeLoader.min.js"></script>
+</head>
+<body>
+
+  <script>
+    $(document).ready(function(){
+        $('.fakeLoader').fakeLoader({
+          timeToHide:1500,
+          zIndex:"11",
+          spinner:"spinner6",
+          bgColor:"#f4f4f4",
+        });
+    });
+  </script>
+  <div class="fakeLoader"></div>
+
+  <div class="intro-wrap">
+    <ul class="intro-row clearfix">
+      <li class="intro-left-fixed">
+        <div class="intro-left-conBox">
+          <div class="intro-logo">
+            <img src="./img/white-logo.png" alt="">
+          </div>
+          <div class="intro-left-txtBox">
+            <h2>
+              <span>What is Lorem?</span>
+              <span><b>Lorem Ipsum</b> is</span>
+              <span>simply dummy text.</span>
+            </h2>
+            <p>
+              Lorem Ipsum is simply dummy text.
+            </p>
+          </div>
+        </div>
+      </li>
+      <li class="intro-right-change01">
+        <div class="intro-blind-wrap">
+
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+  
+  <script>
+    function addCurtain01(){
+      // 추가할 요소의 개수
+      const numberOfElements = 10;
+
+      // .intro-blind-wrap 요소를 선택합니다.
+      const $wrap = $('.intro-blind-wrap');
+
+      // 요소를 추가합니다.
+      for (let i = 1; i <= numberOfElements; i++) {
+        const $div = $('<div></div>');
+        $div.addClass(`intro-right-blind${i < 10 ? '0' : ''}${i}`);
+        $div.addClass("intro-right-blind");
+        $wrap.append($div);
+      }
+
+      $(".intro-curtain-wrap1").addClass("on");
+    }
+
+    function addCurtain02(){
+      for (let i = 1; i <= 10; i++) {
+        
+        let curtainWrap = $(
+          `<div class="intro-curtain-wrap intro-curtain-wrap${i < 10 ? '0' : ''}${i}">
+            <ul class="clearfix intro-curtain-row">
+              <li class="intro-curtain-li01 intro-curtain-li">
+                <a href="#">
+                  <div class="cover"></div>
+                  <div class="intro-curtain-li-conWrap">
+                    <div class="intro-curtain-li-txtBox">
+                      <h2>로렘</h2>
+                      <h3>L o r e m</h3>
+                      <span class="intro-ct-li-bar"></span>
+                      <p>Lorem Ipsum is simply dummy text<br> of the printing and typesetting industry</p>
+                      <p class="intro-view-btn on">View more + <img src="./img/intro-right-arrow.png" alt="" class="white-arrow"></p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="intro-curtain-li02 intro-curtain-li">
+                <a href="#">
+                  <div class="cover"></div>
+                  <div class="intro-curtain-li-conWrap">
+                    <div class="intro-curtain-li-txtBox">
+                      <h2>로렘</h2>
+                      <h3>L o r e m</h3>
+                      <span class="intro-ct-li-bar"></span>
+                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                      <p class="intro-view-btn on">View more + <img src="./img/intro-right-arrow.png" alt="" class="white-arrow"></p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="intro-curtain-li03 intro-curtain-li">
+                <a href="#">
+                  <div class="cover"></div>
+                  <div class="intro-curtain-li-conWrap">
+                    <div class="intro-curtain-li-txtBox">
+                      <h2>로렘</h2>
+                      <h3>L o r e m</h3>
+                      <span class="intro-ct-li-bar"></span>
+                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                      <p class="intro-view-btn on">View more + <img src="./img/intro-right-arrow.png" alt="" class="white-arrow"></p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>`
+        );
+
+        $(".intro-blind-wrap").append(curtainWrap);
+      }
+    }
+
+    function introAddClass(){
+      setTimeout(function(){
+        $(".intro-row").addClass("on");
+      }, 1500);
+
+      setTimeout(function(){
+        $(".intro-blind-wrap").addClass("on");
+      }, 3500);
+
+      setTimeout(function(){
+        $(".intro-curtain-wrap, .intro-right-blind").hide(0);
+        $(".intro-curtain-wrap01").addClass("on");
+        $(".intro-curtain-wrap01").show(0);
+    }, 4500);
+    }
+
+    function init(){
+      addCurtain01();
+      addCurtain02();
+      introAddClass();
+    }
+
+    init();
+
+
+
+  </script>
+
+
+</body>
+</html>
